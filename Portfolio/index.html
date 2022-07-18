@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <title>Beenish Hina portfolio</title>
+</head>
+<style>
+    body {
+        background-color: rgb(234, 247, 246);
+        overflow-x: hidden;
+    }
+
+    nav {
+        background-color: rgb(240, 173, 173);
+        font-size: 20px;
+        font-family: 'Lora', serif;
+        padding-left: 4rem;
+    }
+
+    ul li {
+        padding-left: 4rem;
+        padding-top: 3px;
+    }
+
+    .profile img {
+        border-radius: 50%;
+    }
+
+    .about {
+        border-radius: 10px;
+        box-shadow: rgb(85, 91, 255) 0px 0px 0px 3px, rgb(31, 193, 27) 0px 0px 0px 6px, rgb(255, 217, 19) 0px 0px 0px 9px, rgb(255, 156, 85) 0px 0px 0px 12px, rgb(255, 85, 85) 0px 0px 0px 15px;
+        margin-top: 7rem !important;
+        background-color: rgb(252, 220, 225);
+    }
+
+    .skills {
+        margin-left: 3rem;
+    }
+
+    .skill-bars {
+        padding: 25px 30px;
+        width: 600px;
+        background: rgb(210, 246, 247);
+        box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
+        border-radius: 10px;
+    }
+
+    .skill-bars .bar {
+        margin: 20px 0;
+    }
+
+    .skill-bars .bar:first-child {
+        margin-top: 0px;
+    }
+
+    .skill-bars .bar .info {
+        margin-bottom: 5px;
+    }
+
+    .skill-bars .bar .info span {
+        font-weight: 500;
+        font-size: 17px;
+        opacity: 0;
+        animation: showText 0.5s 1s linear forwards;
+    }
+
+    @keyframes showText {
+        100% {
+            opacity: 1;
+        }
+    }
+
+    .skill-bars .bar .progress-line {
+        height: 10px;
+        width: 100%;
+        background: #fffefe;
+        transform: scaleX(0);
+        transform-origin: left;
+        border-radius: 10px;
+        box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05),
+            0 1px rgba(255, 255, 255, 0.8);
+        animation: animate 1s cubic-bezier(1, 0, 0.5, 1) forwards;
+    }
+
+    @keyframes animate {
+        100% {
+            transform: scaleX(1);
+        }
+    }
+
+    .bar .progress-line span {
+        height: 100%;
+        position: absolute;
+        border-radius: 10px;
+        transform: scaleX(0);
+        transform-origin: left;
+        background: #cc39aa;
+        animation: animate 1s 1s cubic-bezier(1, 0, 0.5, 1) forwards;
+    }
+
+    .bar .progress-line.html span {
+        width: 95%;
+    }
+
+    .bar .progress-line.css span {
+        width: 80%;
+    }
+
+    .bar .progress-line.boot span {
+        width: 80%;
+    }
+
+    .bar .progress-line.javaScript span {
+        width: 70%;
+    }
+
+    .bar .progress-line.python span {
+        width: 60%;
+    }
+
+    .bar .progress-line.react span {
+        width: 50%;
+    }
+
+    .bar .progress-line.native span {
+        width: 50%;
+    }
+
+    .progress-line span::before {
+        position: absolute;
+        content: "";
+        top: -10px;
+        right: 0;
+        height: 0;
+        width: 0;
+        border: 7px solid transparent;
+        border-bottom-width: 0px;
+        border-right-width: 0px;
+        border-top-color: #000;
+        opacity: 0;
+        animation: showText2 0.5s 1.5s linear forwards;
+    }
+
+    .progress-line span::after {
+        position: absolute;
+        top: -28px;
+        right: 0;
+        font-weight: 500;
+        background: #000;
+        color: #fff;
+        padding: 1px 8px;
+        font-size: 12px;
+        border-radius: 3px;
+        opacity: 0;
+        animation: showText2 0.5s 1.5s linear forwards;
+    }
+
+    @keyframes showText2 {
+        100% {
+            opacity: 1;
+        }
+    }
+
+    .progress-line.html span::after {
+        content: "95%";
+    }
+
+    .progress-line.css span::after {
+        content: "80%";
+    }
+
+    .progress-line.javaScript span::after {
+        content: "70%";
+    }
+
+    .progress-line.boot span::after {
+        content: "80%";
+    }
+
+    .progress-line.python span::after {
+        content: "60%";
+    }
+
+    .progress-line.react span::after {
+        content: "50%";
+    }
+
+    .progress-line.native span::after {
+        content: "50%";
+    }
+
+    .web img {
+        margin-top: 5rem;
+        width: 100%;
+    }
+
+    .social {
+        border-radius: 3px;
+        box-shadow: 0 1px 0 #e9e9e9 inset;
+        background: #f3f3f3;
+        border-color: #d1d1d1 #e7e7e7 #e4e4e4;
+        border-radius: 3px;
+        border-style: solid;
+        border-width: 1px;
+        box-shadow: 0 1px 0 #e9e9e9 inset;
+        float: left;
+        list-style: none;
+        padding: 15px 10px;
+        position: relative;
+        text-align: center;
+        margin: 20px;
+    }
+
+    .social li:first-child {
+        margin-top: 0
+    }
+
+    .social li {
+        margin-top: 10px
+    }
+
+    .social li a {
+        display: block;
+        background: #999999;
+        color: #efefef;
+        border-radius: 15px;
+        text-decoration: none;
+        line-height: 30px;
+        width: 30px;
+        font-size: 18px;
+    }
+
+    .social a.tw {
+        background: #00acee
+    }
+
+    .social a.fb {
+        background: #3b5998
+    }
+
+    .social a.gp {
+        background: #dd4b39
+    }
+
+    .social a.git {
+        background: #2f1f1c
+    }
+
+    .social a.linked {
+        background: #3877bb
+    }
+
+    .social a.gmail {
+        background: #f9fafb
+    }
+
+    .contact ul {
+        display: flex;
+    }
+    .fa-google {
+  background: conic-gradient(from -45deg, #ea4335 110deg, #4285f4 90deg 180deg, #34a853 180deg 270deg, #fbbc05 270deg) 73% 55%/150% 150% no-repeat;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+</style>
+
+<body>
+    <div class="fluid-container">
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <a class="navbar-brand" href="#">
+                <h3 style="color:rgb(133, 22, 124) ;">iamBeenishHina</h3>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#skills">Skills</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                    <li class="nav-link" style="padding-left: 30rem ;">
+                        <a href="#contact" style="text-decoration:none ;">
+                            <h3>Get in Touch</h3>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="row" style="padding:6rem ;">
+            <div class="col-md-6 profile"> <img src="./images/profile.png" alt=""></div>
+            <div class="col-md-6 mt-5 p-5 about" style=" height: 200px;" id="about">
+                <h1>Hi, iamBeenishHina</h1>
+                <p>I'm a front-end web developer. I currently CS Student in Comsats University Attock Campus and also
+                    I'm MERN Stack Developer Student in <a href="https://app.thedevnation.com/" style="text-decoration:none ;">DevNation</a> </p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-5 skills" id="skills">
+                <h1
+                    style="color:rgb(135, 9, 9) ; background-color: rgb(240, 225, 229); padding: 1rem; width: 10rem; border-radius: 15px; box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px; margin-left: 1.5rem; ">
+                    SKILLS</h1>
+                <div class="skill-bars">
+                    <div class="bar">
+                        <div class="info">
+                            <span>HTML</span>
+                        </div>
+                        <div class="progress-line html">
+                            <span></span>
+                        </div>
+                    </div>
+                    <div class="bar">
+                        <div class="info">
+                            <span>CSS</span>
+                        </div>
+                        <div class="progress-line css">
+                            <span></span>
+                        </div>
+                    </div>
+
+                    <div class="bar">
+                        <div class="info">
+                            <span>Bootstrap</span>
+                        </div>
+                        <div class="progress-line boot">
+                            <span></span>
+                        </div>
+                    </div>
+
+                    <div class="bar">
+                        <div class="info">
+                            <span>javaScript</span>
+                        </div>
+                        <div class="progress-line javaScript">
+                            <span></span>
+                        </div>
+                    </div>
+                    <div class="bar">
+                        <div class="info">
+                            <span>Python,java</span>
+                        </div>
+                        <div class="progress-line python">
+                            <span></span>
+                        </div>
+                    </div>
+
+
+
+                    <div class="bar">
+                        <div class="info">
+                            <span>React js</span>
+                        </div>
+                        <div class="progress-line react">
+                            <span></span>
+                        </div>
+                    </div>
+
+                    <div class="bar">
+                        <div class="info">
+                            <span>React Native</span>
+                        </div>
+                        <div class="progress-line native">
+                            <span></span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-md-6 web">
+                <img src="./images/web.png" alt="">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12" style="padding:2.5rem ;">
+                <h2>Projects</h2>
+                <ul>
+                    <li>
+                        <img src="./images/devLogo.png" alt="" style="border-radius:50%; width: 2.5rem;">
+                        DevNation Website Clone
+                        
+                    </li>
+                    <li>
+                        <img src="./images/WMC-Logo.png" alt="" style="border-radius:50%;  width: 2.5rem;">
+                    <a href="https://bm-wmc.000webhostapp.com/" style="text-decoration:none ;"> Wah Madical Website Clone</a> 
+                  
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 p-5 contact" id="contact">
+                <h1>Contact</h1>
+                <ul class="social p-4">
+                    <li class="p-3">
+                        <a href="https://twitter.com/Beenish_Hina_?t=NfoFkyrnM0CS0rcLW1D2QQ&s=09" class="tw"
+                            title="Tweet this page!">
+                            <i class="fa fa-twitter"></i>
+                        </a>
+                    </li>
+                    <li class="p-2.5">
+                        <a href="https://www.facebook.com/beenish.hina.7/" class="fb" title="Share this page!">
+                            <i class="fa fa-facebook"></i>
+                        </a>
+                    </li>
+                    <li class="p-2.5">
+                        <a href="https://www.instagram.com/invites/contact/?i=1p8wu58dnaw2p&utm_content=66lravj"
+                            class="gp" title="Share this page!">
+                            <i class="fa fa-instagram"></i>
+                        </a>
+                    </li>
+                    <li class="p-2.5">
+                        <a href="https://github.com/BeenishHina" class="git" title="Share this page!">
+                            <i class="fa fa-github"></i>
+                        </a>
+                    </li>
+                    <li class="p-2.5">
+                        <a href="https://www.linkedin.com/in/beenish-hina-26b4a023b" class="linked"
+                            title="Share this page!">
+                            <i class="fa fa-linkedin"></i>
+                        </a>
+                    </li>
+                    <li class="p-2.5">
+                        <a href="mailto: beenishhina280@gmail.com" class="gmail"
+                            title="Share this page!">
+                            <i class="fa fa-google"></i>
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
